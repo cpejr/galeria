@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <title>{{ title }}</title>   <!-- título da aba da página*/ -->
+  <link rel='stylesheet' href='/stylesheets/style.css'>
+  <link rel='stylesheet' href='/stylesheets/estilos.css'>
+  <link rel="manifest" href="/manifest.json">
+  <link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico">
+  {{{_sections.stylesheets}}}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+</head>
+<body>
+  <!-- Header and NavBar -->
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="gradient-background pl-2 pt-2">
+        <h4 class="text-white ml-3 mt-3">Bem vindo {{firstName}}</h4>
+        <ul class="navbar-nav mr-auto ml-5 mt-4">
+          <div class="row">
+            <div class="col-md-6">
+              <li class="nav-item active">
+                <a class="nav-link opacity-changes d-inline-block" href="/user">
+                  <i class="fas fa-home fa-sm mt-2 float-left"></i>
+                  <h3 class="font3 mobile-font float-right">Menu principal</h3>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link opacity-changes d-inline-block" href="/user/edit">
+                  <i class="fas fa-user fa-sm mt-2 float-left"></i>
+                  <h3 class="font3 mobile-font float-right">Minha conta</h3>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link opacity-changes d-inline-block" href="/transaction/">
+                  <i class="fas fa-hdd fa-sm mt-2 float-left"></i>
+                  <h3 class="font3 mobile-font float-right">Histórico</h3>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link opacity-changes d-inline-block" href="/logout">
+                  <i class="fas fa-sign-out-alt fa-sm mt-2 float-left"></i>
+                  <h3 class="font3 mobile-font float-right">Logout</h3>
+                </a>
+              </div>
+              <div class="col-md-6 my-auto">
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link font3" href="/user/contact">
+                  SUPORTE E CONTATO
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link font3" href="/user/doubts">
+                  DÚVIDAS FREQUENTES
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link font3" href="/terms">
+                  TERMOS DE USO
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link font3" href="https://www.facebook.com/megapoolagro">
+                  CURTA NOSSA PÁGINA
+                </a>
+              </li>
+            </div>
+          </div>
+        </ul>
+      </div>
+    </div>
+    <nav class="navbar gradient-background pl-2 pt-2">
+      <row>
+        <button id="menu" class="btn btn-outline-dark nav-color-change float-left mr-1" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="d-inline d-sm-none card-icon fas fa-bars fa-sm align-self-center"></i>
+          <i class="d-none d-sm-inline d-xl-none card-icon fas fa-bars fa-2x align-self-center"></i>
+          <i class="d-none d-xl-inline card-icon fas fa-bars fa-2x align-self-center"></i>
+        </button>
+      </row>
+    </nav>
+  </div>
+  <!-- end Header and NavBar -->
+
+  {{{ body }}}
+
+  <div class="agro-alert col-12 col-lg-4 col-md-6">
+    {{> messages}}
+  </div>
+
+  <script src="/javascripts/jquery.js" charset="utf-8"></script>
+  <script src="/typeahead/typeahead.bundle.min.js"></script>
+  <script src="/bootstrap/js/bootstrap.bundle.min.js" charset="utf-8"></script>
+  <script src="/javascripts/navbar.js" charset="utf-8"></script>
+  <script src="/javascripts/search.js"></script>
+  {{{_sections.scripts}}}
+</body>
+</html>

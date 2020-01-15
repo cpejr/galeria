@@ -1,0 +1,872 @@
+@import ../bootstrap/scss/bootstrap.scss
+@import ../bootstrap/scss/typeaheadjs.scss
+@import ../bootstrap/scss/social-media.scss
+@import ../fonts/fontawesome/fontawesome-all.css
+
+
+
+//
+// Default colors
+//
+$dark-color: #232323
+$dark2-color: #5b5b5b
+$light-color: #E5E7E9
+$green-color: #3b9939 // A definir
+$green-color2: #537c00
+$gray-color: #e5e5e5
+$gray-color2: #b2b2b2
+$gray-color3: #606060
+$gray-color4: #caccce
+$red-color: #db4437
+$green-color3: #b2ca00
+
+//
+// Default settings
+//
+body
+  background-color: $light-color
+  height: 100%
+
+//
+//Default backgrounds
+//
+.bg-dark
+  background-color: $dark-color !important
+
+.bg-dark-opacity
+  background-color: rgba(35, 35, 35, .9)
+  opacity: 0.95
+
+.bg-dark2
+  background-color: $dark2-color
+
+.bg-light
+  background-color: $light-color !important
+
+.bg-green
+  background: $green-color
+
+.bg-green2
+  background: $green-color2
+
+.bg-light2
+  background-color: #FDFEFE
+
+.bg-img1
+  background-image: url('../images/bg-g.jpg')
+  background-size: cover
+  background-position: top
+  background-repeat: no-repeat
+
+.bg-img2
+  background-image: url('../images/AdobeStock_89784591_Preview.jpeg')
+  background-size: cover
+  background-position: top
+  background-repeat: no-repeat
+
+//
+// Default text colors and styles
+//
+.text-dark
+  color: $dark-color !important
+
+.text-dark2
+  color: $dark2-color
+
+.text-light
+  color: $light-color !important
+
+.text-gray
+  color: $gray-color !important
+
+.text-gray3
+  color: $gray-color3 !important
+
+.text-red
+  color: $red-color !important
+
+.text-green
+  color: $green-color !important
+
+.text-green2
+  color: $green-color2 !important
+
+.text-green3
+  color: $green-color3 !important
+
+.text-light2
+  color: #FDFEFE
+
+.double-border
+  border-style: double
+
+//
+// Default fonts
+//
+@font-face
+  font-family: 'gotham-bold'
+  src: url("../fonts/officialfonts/GOTHAM-BOLD.otf") format("opentype")
+
+
+@font-face
+  font-family: 'gotham-black'
+  src: url("../fonts/officialfonts/GOTHAM-BLACK.otf") format("opentype")
+
+
+@font-face
+  font-family: 'gotham-light'
+  src: url("../fonts/officialfonts/GOTHAM-LIGHT.otf") format("opentype")
+
+
+@font-face
+  font-family: 'gotham-book'
+  src: url("../fonts/officialfonts/Gotham-Book.otf") format("opentype")
+
+button, h2, h4, h6, h7, p, i, a, dt, li
+  font-family: 'gotham-book'
+
+.font-black
+  font-family: 'gotham-black'
+
+.font-bold
+  font-family: 'gotham-bold'
+
+.font-light
+  font-family: 'gotham-light'
+
+.font-book
+  font-family: 'gotham-book'
+
+body
+  font-family: 'gotham-book'
+
+h1, h3, h5, span
+  font-family: 'gotham-book'
+
+//
+// Default header and navbar
+//
+nav
+  background-color: $dark-color !important
+
+.nav-item a,
+.nav-item .fas,
+.navbar .fas
+  color: $light-color
+
+.nav-item .fas
+  margin-right: 10px
+
+nav .form-control
+  display: none
+
+.nav-color-change
+  background-color: #000
+  &:hover
+    background-color: #000
+//cards
+.card
+  color: #000 !important
+  border-color: $dark2-color
+
+
+.card-text
+  white-space: normal
+  width: 100%
+
+.break
+  -ms-word-break: break-all
+  word-break: break-all
+  word-break: break-word
+  -webkit-hyphens: auto
+  -moz-hyphens: auto
+  hyphens: auto
+
+@media (max-width:320px)
+  .card
+    // width: 20em
+
+  .mobile-font5
+    font-size: 0.2em
+
+.card-icon
+  color: $dark-color
+  border-radius: 50%
+
+.vl
+  border-left: 1px solid green
+
+@media (min-width:769px)
+  .side-animation
+    width: 5px
+    height: 30px
+    background: $green-color3
+    -webkit-transition: width 1s
+    transition: width 1s
+    transition-timing-function: cubic-bezier(0.42,0,0.58,1)
+
+  .card1:hover .side-animation
+    width: 10.0em
+
+  .card1:hover
+    cursor: pointer
+
+.smaller-font
+  font-size: .7em
+
+// Default images
+//
+img.navbar-brand
+  width: 100px
+
+img.footer-brand
+  width: 200px
+
+.grayscale
+  filter: grayscale(100%)
+
+.badge
+  width: 200px
+  padding: 7px 25px 2px 25px
+  border-radius: 20px
+  margin: 2px
+
+.badge2
+  border-radius: 20px
+
+.product-myOrders
+  margin-top: 20px
+
+.termsOfUse
+  border: none
+  padding: 5px
+  width: 500px
+  height: 150px
+  overflow: scroll
+
+
+.info
+  border: none
+  width: 2000px
+  height: 69vh
+  overflow: scroll
+
+
+  /* Scrollbar styles */
+.info::-webkit-scrollbar
+  width: 8px
+  height: 0px
+
+
+.info::-webkit-scrollbar-track
+  border: 0px solid yellowgreen
+
+
+.info::-webkit-scrollbar-thumb
+  background: yellowgreen
+
+
+.info::-webkit-scrollbar-thumb:hover
+  background: #88ba1c
+
+.user-input
+	position: relative
+
+.user-input .input-text:invalid
+	box-shadow: none !important
+
+.user-input .input-text:focus
+	border-color: black
+	border-width: 1px
+
+.user-input .floating-label
+	position: absolute
+	pointer-events: none
+	top: 7px
+	left: 50px
+	transition: 0.2s ease all
+
+.user-input input:focus ~ .floating-label,
+.user-input input:not(:focus):valid ~ .floating-label
+	top: -20px
+	left: 10px
+	font-size: 13px
+  opacity: 1
+
+.new-shadow
+	box-shadow: none !important
+
+.new-shadow:focus
+  border-color: black
+  border-width: medium medium 2px
+
+.user-input textarea:focus ~ .floating-label,
+.user-input textarea:not(:focus):valid ~ .floating-label
+	top: -20px
+	left: 10px
+	font-size: 13px
+  opacity: 1
+
+.editlabel
+  	top: -20px
+  	left: 10px
+  	font-size: 13px
+    opacity: 1
+
+// initial page
+
+.opacity-changes
+  opacity: 0.7
+
+.opacity-changes:hover
+  opacity: 1
+  transition: 0.2s ease all
+
+.index-highlight:hover
+  background: $green-color2
+  cursor: pointer
+  transition: 0.3s ease all
+  color: $light-color
+
+// Error message
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700')
+@import url('https://fonts.googleapis.com/css?family=Catamaran:400,800')
+
+.error-container
+  text-align: center
+  font-size: 180px
+  font-family: 'Catamaran', sans-serif
+  font-weight: 800
+  margin: 20px 15px
+
+.error-container > span
+  display: inline-block
+  line-height: 0.7
+  position: relative
+  color: $green-color
+
+.error-container > span > span
+  display: inline-block
+  position: relative
+
+.error-container > span:nth-of-type(1)
+  perspective: 1000px
+  perspective-origin: 500% 50%
+  color: $green-color2
+
+.error-container > span:nth-of-type(1) > span
+  transform-origin: 50% 100% 0px
+  transform: rotateX(0)
+  animation: easyoutelastic 8s infinite
+
+.error-container > span:nth-of-type(3)
+  perspective: none
+  perspective-origin: 50% 50%
+  color: $green-color3
+
+.error-container > span:nth-of-type(3) > span
+  transform-origin: 100% 100% 0px
+  transform: rotate(0deg)
+  animation: rotatedrop 8s infinite
+
+@keyframes easyoutelastic
+  0%
+    transform: rotateX(0)
+  9%
+    transform: rotateX(210deg)
+  13%
+    transform: rotateX(150deg)
+  16%
+    transform: rotateX(200deg)
+  18%
+    transform: rotateX(170deg)
+  20%
+    transform: rotateX(180deg)
+  60%
+    transform: rotateX(180deg)
+  80%
+    transform: rotateX(0)
+  100%
+    transform: rotateX(0)
+
+
+@keyframes rotatedrop
+  0%
+    transform: rotate(0)
+  10%
+    transform: rotate(30deg)
+  15%
+    transform: rotate(90deg)
+  70%
+    transform: rotate(90deg)
+  80%
+    transform: rotate(0)
+  100%
+    transform: rotateX(0)
+
+.zoom-area
+  max-width: 490px
+  margin: 30px auto 30px
+  font-size: 19px
+  text-align: center
+
+.link-container
+  text-align: center
+
+a.more-link
+  text-transform: uppercase
+  font-size: 13px
+  background-color: #bbb
+  color: #fff
+  display: inline-block
+  margin-right: 5px
+  margin-bottom: 5px
+  line-height: 1.5
+  text-decoration: none
+  margin-top: 50px
+  letter-spacing: 1px
+
+// tooltips
+
+@media (min-width:100px)
+  .pagination
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    height: 15px
+    margin: auto
+    text-align: center
+
+    &__dot
+      width: 50px
+      height: 32px
+      display: inline-block
+      cursor: pointer
+      margin: 0 0.2em
+      transition: .3s
+
+      &--active
+        background: #FF0000
+
+      &--mega
+        background: url("../images/megaOportunidade_icon.png") 2px no-repeat scroll white
+
+      &:hover
+          transition: .3s
+          color: #3b9939
+          box-shadow: -5px -5px #3b9939, 5px 5px #3b9939
+          border-color: #000000
+
+          &:before
+            top: -45px
+            opacity: 1
+
+          &:after
+            top: -18px
+            opacity: 1
+// navbar
+.searchbar input
+	outline: none
+
+.searchbar input[type=search]
+	-webkit-appearance: textfield
+	-webkit-box-sizing: content-box
+	font-family: inherit
+	font-size: 100%
+
+.searchbar input::-webkit-search-decoration,
+.searchbar input::-webkit-search-cancel-button
+	display: none
+
+.input-icon
+  position: absolute
+  left: 10px
+  top: calc(50% - 0.5em) /* Keep icon in center of input, regardless of the input height */
+
+.input-icon input
+  padding-left: 15px
+
+.input-wrapper
+  position: relative
+
+.searchbar input[type=search]
+	border: solid 1px #ccc
+
+.searchbar input[type=search]
+	padding: 9px 10px 9px 32px
+
+.searchbar input[type=search]
+	width: 150px
+  background-color: $light-color
+	-webkit-border-radius: 10em
+	-moz-border-radius: 10em
+	border-radius: 10em
+	-webkit-transition: all .5s
+	-moz-transition: all .5s
+	transition: all .5s
+
+@media (min-width:769px)
+  .searchbar input[type=search]:focus
+  	width: 190px !important
+  	background-color: #FFF
+  	border-color: #CCC
+  	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5)
+  	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5)
+  	box-shadow: 0 0 5px rgba(109,207,246,.5)
+
+.searchbar input:-moz-placeholder
+	color: #999
+
+.searchbar input::-webkit-input-placeholder
+	color: #999
+
+
+.gradient-background
+  background-image: linear-gradient(to right, #000, #000)
+
+
+/* Responsive style changes */
+@media (max-width:375px)
+  .mobile-font0
+    font-size: .7em !important
+
+  .mobile-fontCT
+    font-size: .9em !important
+
+@media (max-width:769px)
+  .mobile-font0
+    font-size: .9em
+
+  .mobile-font1
+    font-size: .7em
+
+  .mobile-font2
+    font-size: .9em
+
+  .mobile-font4
+    font-size: 1.3em
+
+  .mobile-font6
+    font-size: 2.0em
+
+  .mobile-color-font
+    color: #232323
+
+  .icon-center
+    text-align: center
+    margin-right: 35%
+
+  .list-group-item
+    color: $dark-color
+    padding-top: 20px
+    padding-bottom: 20px
+    background: $light-color
+
+  .searchbar input[type=search]
+  	width: 45px
+    font-size: .5em
+    background-color: $dark2-color
+    color: #fff
+  	-webkit-border-radius: 10em
+  	-moz-border-radius: 10em
+  	border-radius: 10em
+  	-webkit-transition: all .5s
+  	-moz-transition: all .5s
+  	transition: all .5s
+
+  .searchbar input[type=search]::placeholder
+    font-size: .8em
+
+  .searchbar input[type=search]:focus
+  	background-color: transparent !important
+  	border-color: #ccc
+  	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5)
+  	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5)
+  	box-shadow: 0 0 5px rgba(109,207,246,.5)
+
+  .list-group-item .fas:not(.float-right)
+    margin-right: 10px
+
+  .list-group-item .float-right
+    color: #999
+
+
+.btn-index
+  background: white
+  border: 1px solid $dark-color
+  box-shadow: 0 0 0 $dark-color
+  transition: all 0.2s
+  margin-top: 0px
+  margin-bottom: 0px
+  cursor: pointer
+
+.btn-index:last-child
+  margin: 0
+
+.btn-index:hover
+  box-shadow: 0.4rem 0.4rem 0 $dark-color
+  transform: translate(-0.3rem, -0.3rem)
+
+.btn-index:active
+  box-shadow: 0 0 0 $dark-color
+  transform: translate(0, 0)
+
+.desktop-font1
+  font-size: 10px
+
+
+// Dropdown menu
+.autocomplete
+  background: #fff
+  position: relative
+  // width: 400px
+  // box-shadow: 0 0 2px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.24)
+
+.autocomplete .close
+  position: absolute
+  font-size: 13px
+  z-index: 10
+  top: 10px
+  left: calc(100% - 60px)
+  color: #aaa
+  cursor: pointer
+  display: none
+
+.autocomplete .close.visible
+  display: block
+
+// .input
+//   padding: 10px 10px
+//   font-weight: 300
+//   width: 100%
+//   border: none
+//   outline: none
+//   font-size: 14px
+//   color: #666
+
+.dialog
+  width: 100%
+  display: none
+  min-height: 40px
+  max-height: 330px
+  overflow: scroll
+  border-top: 1px solid #f4f4f4
+
+.dialog.open
+  display: block
+
+.dialog div
+  padding: 20px 10px
+  font-size: 13px
+  cursor: pointer
+  transition: all 0.2s
+
+.dialog div:hover
+  background: #f2f2f2
+
+//Typeahed styles
+.tt-query
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+
+.tt-hint
+  color: #999
+
+.tt-menu     /* used to be tt-dropdown-menu in older versions */
+  width: 335px
+  margin-top: 4px
+  padding: 4px 0
+  background-color: #fff
+  border: 1px solid #ccc
+  border: 1px solid rgba(0, 0, 0, 0.2)
+  -webkit-border-radius: 4px
+     -moz-border-radius: 4px
+          border-radius: 4px
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2)
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2)
+          box-shadow: 0 5px 10px rgba(0,0,0,.2)
+
+.tt-suggestion
+  padding: 3px 20px
+  line-height: 20px
+
+.tt-suggestion.tt-cursor,.tt-suggestion:hover
+  color: #fff
+  background-color: #0097cf
+  cursor: pointer
+
+.tt-suggestion p
+  margin: 0
+
+#products-list .tt-menu
+  max-height: 150px
+  overflow-y: auto
+
+.agro-alert
+  position: fixed
+  top: 10px
+  right: 10px
+  margin-left: 10px
+
+.animatable
+  // animation about
+  /* initially hide animatable objects */
+  visibility: hidden
+
+  /* initially pause animatable objects their animations */
+  -webkit-animation-play-state: paused
+  -moz-animation-play-state: paused
+  -ms-animation-play-state: paused
+  -o-animation-play-state: paused
+  animation-play-state: paused
+
+
+/* show objects being animated */
+.animated
+  visibility: visible
+
+  -webkit-animation-fill-mode: both
+  -moz-animation-fill-mode: both
+  -ms-animation-fill-mode: both
+  -o-animation-fill-mode: both
+  animation-fill-mode: both
+
+  -webkit-animation-duration: 1s
+  -moz-animation-duration: 1s
+  -ms-animation-duration: 1s
+  -o-animation-duration: 1s
+  animation-duration: 1s
+
+  -webkit-animation-play-state: running
+  -moz-animation-play-state: running
+  -ms-animation-play-state: running
+  -o-animation-play-state: running
+  animation-play-state: running
+
+
+/* CSS Animations (extracted from http://glifo.uiparade.com/) */
+@-webkit-keyframes fadeInDown
+	0%
+		opacity: 0
+		-webkit-transform: translateY(20px)
+		100%
+		opacity: 1
+		-webkit-transform: translateY(0)
+
+
+
+@-moz-keyframes fadeInDown
+	0%
+		opacity: 0
+		-moz-transform: translateY(20px)
+
+
+	100%
+		opacity: 1
+		-moz-transform: translateY(0)
+
+
+
+@-o-keyframes fadeInDown
+	0%
+		opacity: 0
+		-o-transform: translateY(20px)
+
+
+	100%
+		opacity: 1
+		-o-transform: translateY(0)
+
+
+
+@keyframes fadeInDown
+	0%
+		opacity: 0
+		transform: translateY(20px)
+
+	100%
+		opacity: 1
+		transform: translateY(0)
+
+
+
+.animationDelay
+	animation-delay: 2s 2s
+	-webkit-animation-delay: .4s
+
+.animated.animationDelayMed
+	animation-delay: .8s 2s
+	-webkit-animation-delay: .8s
+
+.animated.animationDelayLong
+	animation-delay: 1.2s 2s
+	-webkit-animation-delay: 1.2s
+
+.animated.fadeInDown
+	-webkit-animation-name: fadeInDown
+	-moz-animation-name: fadeInDown
+	-o-animation-name: fadeInDown
+	animation-name: fadeInDown
+
+.cursor-default
+  cursor: default !important
+
+.social
+  text-align: center
+  width: 45px
+  height: 45px
+  float: left
+  background: rgb(255,255,255)
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15), inset 0 0 50px rgba(0,0,0,0.1)
+  border-radius: 100px
+  margin: 0 10px 10px 0
+
+.facebook:hover
+  background: #3b5998
+  color: #FFF
+.twitter:hover
+  background: #00acee
+  color: #FFF
+.linkedin:hover
+  background: #0e76a8
+  color: #FFF
+.youtube:hover
+  background: #c4302b
+  color: #FFF
+
+.typeahead-search
+    background-color: transparent
+
+.empty-search
+  padding: 5px 10px
+  text-align: center
+
+.typeahead-menu
+  position: absolute
+  top: 100%
+  left: 0
+  z-index: 1000
+  display: none
+  float: left
+  min-width: 10rem
+  padding: 0.5rem 0
+  margin: 0.125rem 0 0
+  font-size: 1rem
+  color: #212529
+  text-align: left
+  list-style: none
+  background-color: #fff
+  background-clip: padding-box
+  border: 1px solid rgba(0, 0, 0, 0.15)
+  border-radius: 0.25rem
+
+.margin-flash
+  margin-top: 4.7em
+
+
+@media (max-width:425px)
+  .margin-sm-dashboard
+    margin-top: 2.75em

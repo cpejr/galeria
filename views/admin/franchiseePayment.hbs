@@ -1,0 +1,64 @@
+{{#section 'stylesheets'}}
+{{/section}}
+
+<div class="text-center pb-3 gradient-background text-white">
+  <h3 class="font-black">Taxas dos franqueados</h3>
+</div>
+
+{{#if users}}
+<div style="overflow-x:auto;">
+  <div class="container">
+    <p>Digite logo abaixo para buscar alguma taxa dos franqueados:</p>
+    <input class="form-control" id="myInput" type="text" placeholder="Pesquisar">
+    <br>
+    <table class="table table-bordered table-striped table-responsive-sm">
+      <thead>
+        <tr>
+          <th class="text-center">Nome</th>
+          <th class="text-center">Valor a pagar (U$)</th>
+          <th class="text-center">Opções</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        {{#each users}}
+        {{#compare type "Franqueado"}}
+        {{#ifNotEq pendingPayment 0}}
+        <tr>
+          <th class="text-center" scope="row">{{fullName}}</th>
+          <th class="text-center" scope="row">{{pendingPayment}}</th>
+          <th class="text-center">
+            <form action="/admin/payFranchisee/{{id}}" method="POST">
+              <input type="hidden" name="pendingPayment" value = 0></input>
+              <button type="submit" align="center" class="btn btn-outline-info" name="status">
+                Pago
+              </button>
+            </form>
+          </th>
+        </tr>
+        {{/ifNotEq}}
+        {{/compare}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{else}}
+<div class="container">
+  <p class="text-center font-light">Ainda não há pagamentos necessários para os franqueados.</p>
+</div>
+{{/if}}
+
+{{#section 'scripts'}}
+<script src="/javascripts/navbar.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{{/section}}

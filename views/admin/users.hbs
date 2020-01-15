@@ -1,0 +1,79 @@
+{{#section 'stylesheets'}}
+{{/section}}
+
+<div class="text-center pb-3 gradient-background text-white">
+  <h3 class="font-black">Usuários cadastrados</h3>
+</div>
+
+<div style="overflow-x:auto;">
+  <div class="container">
+    <p>Digite logo abaixo para buscar algum usuário específico:</p>
+    <input class="form-control" id="myInput" type="text" placeholder="Pesquisar">
+    <br>
+
+    <table class="table table-bordered table-striped table-responsive-sm">
+      <thead>
+        <tr>
+          <th class="text-center">Nome</th>
+          <th class="text-center">Status</th>
+          <th class="text-center">Tipo</th>
+          <th class="text-center">E-mail</th>
+          <th class="text-center">CPF/CNPJ</th>
+          <th class="d-none text-center"></th>
+          <th class="text-center">Opções</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        {{#each users}}
+        {{#compare status 'Aguardando aprovação'}}
+        {{else}}
+
+        <tr>
+          <td scope="row" class="text-center">{{fullName}}</td>
+          <td class="text-center">
+            <div class="dropdown">
+              <button name="taxStatus"  type="" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+              {{#compare status 'Ativo'}}
+              class="btn btn-success col-12">
+              {{status}}
+
+              {{else compare status 'Inativo'}}
+              class="btn btn-warning col-12">
+              {{status}}
+
+              {{else compare status 'Bloqueado'}}
+              class="btn btn-danger col-12">
+              {{status}}
+
+              {{/compare}}
+
+            </button>
+          </td>
+          <td class="text-center">{{type}}</td>
+          <td class="text-center">{{email}}</td>
+          <td class="text-center">{{doc}}</td>
+          <td scope="row" class="font-light text-center">
+            <button onclick="location.href='/user/profile/{{id}}'" class="btn btn-outline-info font-book">Ver</button>
+          </td>
+        </tr>
+        {{/compare}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{#section 'scripts'}}
+<script src="/javascripts/navbar.js"></script>
+<!-- <script src="/javascripts/filter.js"></script> -->
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{{/section}}

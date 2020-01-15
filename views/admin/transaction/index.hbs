@@ -1,0 +1,72 @@
+{{#section 'stylesheets'}}
+{{/section}}
+
+<div class="text-center pb-3 gradient-background text-white">
+  <h3 class="font-black">Boletos pendentes</h3>
+</div>
+
+{{#if transactions}}
+<div style="overflow-x:auto;">
+  <div class="container">
+    <p>Digite logo abaixo para buscar algum boleto específico:</p>
+    <input class="form-control" id="myInput" type="text" placeholder="Pesquisar">
+    <br>
+
+    <table class="table table-bordered table-striped table-responsive-sm">
+      <thead>
+        <tr>
+          <th class="text-center">Código da compra</th>
+          <th class="text-center">Comprador</th>
+          <th class="text-center">Valor da taxa (U$)</th>
+          <th class="text-center">Status</th>
+          <th class="text-center">Opções</th>
+        </tr>
+      </thead>
+      <tbody id="myTable">
+        {{#each transactions}}
+        {{#compare taxStatus 'Aguardando boleto'}}
+        <tr>
+          <td class="text-center">{{_id}}</td>
+          <td class="text-center">{{buyer.fullName}}</td>
+          <td class="text-center">{{taxValue}}</td>
+          <td class="text-center">{{taxStatus}}</td>
+          <td scope="row" class="font-light text-center">
+            <a href="/transaction/{{_id}}" class="btn btn-outline-primary font-book">Ver</a>
+          </td>
+        </tr>
+        {{else compare taxStatus 'Aguardando pagamento'}}
+        <tr>
+          <td class="text-center">{{_id}}</td>
+          <td class="text-center">{{buyer.fullName}}</td>
+          <td class="text-center">{{priceBought}}</td>
+          <td class="text-center">{{taxStatus}}</td>
+          <td scope="row" class="font-light">
+            <a href="/transaction/{{_id}}" class="btn btn-outline-primary font-book">Ver</a>
+          </td>
+        </tr>
+        {{/compare}}
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+{{else}}
+<div class="container">
+  <p class="text-center font-light">Não há nenhum boleto pendente.</p>
+</div>
+{{/if}}
+
+{{#section 'scripts'}}
+<script src="/javascripts/navbar.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
+{{/section}}

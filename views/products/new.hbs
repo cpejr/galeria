@@ -1,0 +1,113 @@
+{{#section 'stylesheets'}}
+{{/section}}
+
+<div class="pb-3 gradient-background text-white">
+  {{#compare userType 'Administrador'}}
+  <h3 class="text-center font-black">Novo produto</h3>
+  {{else compare userType 'Indústria'}}
+  <h3 class="text-center font-black">Cadastrar novo produto</h3>
+  {{/compare}}
+</div>
+
+<div class="pl-5 pr-5 pt-2">
+    <small><section class="double-border m-2 text-center col-8 mx-auto"><p class="m-2">LEMBRE-SE: Todos os preços são em Dólar,
+    para conversão será utilizado o valor do Dólar Ptax de venda do dia anterior ao vencimento.<p></section></small>
+
+
+<form action="/products" method="POST">
+  <div class="row d-flex justify-content-between">
+
+    <div class="col-md-4">
+      <div class="user-input">
+        <br/>
+        <div class="input-group mb-2">
+         <div class="input-group-prepend">
+           <div class="input-group-text"><i class="fas fa-cart-arrow-down"></i></div>
+         </div>
+        <input name="product[name]" type="text" class="form-control input-text" required/>
+        <label class="floating-label text-dark2">Nome do Produto</label>
+          </div>
+      </div>
+
+      <div class="user-input">
+      <br/>
+      <label for="category" class="sr-only">Categoria</label>
+      <div class="input-group mb-2">
+       <div class="input-group-prepend">
+         <div class="input-group-text"><i class="fas fa-boxes"></i></div>
+       </div>
+       <select class="form-control new-shadow" name="product[category]" id="category">
+         <option disabled selected value> -- Categoria -- </option>
+         <option value="Fertilizantes sólidos">Fertilizantes sólidos</option>
+         <option value="Defensivos agrícolas/agrotóxicos">Defensivos agrícolas/agrotóxicos</option>
+         <option value="Sementes">Sementes</option>
+         <option value="Fertilizantes líquidos/adjuvantes/biológicos">Fertilizantes líquidos/adjuvantes/biológicos</option>
+       </select>
+      </div>
+    </div>
+
+      <div class="user-input">
+        <br/>
+        <div class="input-group mb-2">
+         <div class="input-group-prepend">
+           <div class="input-group-text"><i class="fas fa-newspaper"></i></div>
+         </div>
+         <textarea rows="4" name="product[description]" class="form-control input-text" required/></textarea>
+         <label class="floating-label text-dark2">Descrição</label>
+         </div>
+      </div>
+    </div>
+
+
+    <div class="col-md-4">
+      <input type="hidden" class="bg-light form-control" name="product[manufacturer]" value={{user.fantasyName}} readonly>
+
+      <div class="user-input">
+        <br/>
+        <div class="input-group mb-2">
+         <div class="input-group-prepend">
+           <div class="input-group-text"><i class="fas fa-balance-scale"></i></div>
+         </div>
+         <select class="form-control new-shadow" name="product[unit]" id="un">
+           <option disabled selected value> -- Unidade -- </option>
+           <option value="kg">Quilograma</option>
+           <option value="un">Unidade</option>
+           <option value="L">Litros</option>
+           <option value="ton">Toneladas</option>
+         </select>
+        </div>
+        <input type="checkbox" name="product[generic]" value="Original"></input>
+        <label>Marque esta opção se o produto é original</label>
+        <p>*Não genérico</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="row">
+        <small><section class="double-border m-2"><p class="m-2">Não encontrou o princípio ativo que procurava?
+        Envie um email para contato@megapool.com.br e nos ajude a completar nosso catálogo.<p></section></small>
+        <div class="user-input ml-3">
+          <br/>
+          <div class="form-group mb-2">
+            <div class="input-group" id="chems-list">
+              <div class="input-group-prepend">
+                <div class="input-group-text"><i class="fas fa-search"></i></div>
+              </div>
+              <input name="chem-selected" class="form-control typeahead" type="text" placeholder="Nome do princípio ativo">
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-default bg-green text-light mb-2 mt-md-4 mr-3 ml-3 d-block mx-auto" id="add-chem" type="button">Adicionar</button>
+        <div class="" id="select-chem">
+      </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="btn btn-default bg-green text-light mx-auto mt-4 px-5 mb-3 d-block" type="submit">Enviar</button>
+</form>
+</div>
+
+{{#section 'scripts'}}
+<script src="/javascripts/chem.dropdown.js"></script>
+{{/section}}

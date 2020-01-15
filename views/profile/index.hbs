@@ -1,0 +1,521 @@
+{{#section 'stylesheets'}}
+{{/section}}
+
+<div class="text-center pb-3 gradient-background text-white">
+  <h3 class="font-black">Perfil de {{user.firstName}}</h3>
+</div>
+<div class="p-4">
+  <div class="pl-lg-3 pr-lg-3 ml-lg-3 mr-lg-3">
+    <div class="p-lg-5 ml-lg-5 mr-lg-5">
+      <div class="row d-flex justify-content-between">
+        <div class="col-md-6">
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Nome:</h5>
+            <p class="font-book mb-4">{{user.fullName}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Email:</h5>
+            <p class="font-book mb-4">{{user.email}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">CEP:</h5>
+            <p class="font-book mb-4">{{user.address.cep}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Rua:</h5>
+            <p class="font-book mb-4">{{user.address.street}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Número:</h5>
+            <p class="font-book mb-4">{{user.address.number}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Cidade:</h5>
+            <p class="font-book mb-4">{{user.address.city}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Estado:</h5>
+            <p class="font-book mb-4">{{user.address.state}}</p>
+          </div>
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">CPF/CNPJ:</h5>
+            <p class="font-book mb-4">{{user.doc}}</p>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+
+          {{#compare user.type 'Franqueado'}}
+          <div class="form-group">
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Resumo das atividades profissionais atuais:</h5>
+              <p class="font-book mb-4">{{user.activities}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Total de clientes:</h5>
+              <p class="font-book mb-4">{{user.totalCustomers}}</p>
+            </div>
+
+            {{#compare userType 'Administrador'}}
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Possui carteira de cliente que cotam produtos:</h5>
+              <p class="font-book mb-4">{{user.actualCustomers}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Possui carteira de cliente que podem vir cotar produtos:</h5>
+              <p class="font-book mb-4">{{user.possibleCustomers}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Como a Megapool poderia ser importante para seu négocio:</h5>
+              <p class="font-book mb-4">{{user.whyIsMegapoolImportant}}</p>
+            </div>
+            {{/compare}}
+
+            {{else compare user.type 'Revendedor'}}
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Telefone fixo:</h5>
+              <p class="font-book mb-4">{{user.phone}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Celular:</h5>
+              <p class="font-book mb-4">{{user.cellphone}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Nome fantasia:</h5>
+              <p class="font-book mb-4">{{user.fantasyName}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Email de contato:</h5>
+              <p class="font-book mb-4">{{user.secondaryEmail}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Responsável pela conta:</h5>
+              <p class="font-book mb-4">{{user.responsible.name}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Tem condições de atender demandas imediatas:</h5>
+              <p class="font-book mb-4">{{user.delivery.stock}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Aceita entregar encomendas em até: (km)</h5>
+              <p class="font-book mb-4">{{user.maxDistance}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Telefone do responsável pela logística:</h5>
+              <p class="font-book mb-4">{{user.logistics.phone}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Email da logística:</h5>
+              <p class="font-book mb-4">{{user.logistics.email}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Município sede da matriz:</h5>
+              <p class="font-book mb-4">{{user.headquarter}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Responsável pela empresa na região:</h5>
+              <p class="font-book mb-4">{{user.regionalResponsible}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Telefone fixo do Responsável pela conta MEGAPOOL:</h5>
+              <p class="font-book mb-4">{{user.responsible.phone}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Celular do Responsável pela conta MEGAPOOL:</h5>
+              <p class="font-book mb-4">{{user.responsible.cellphone}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Estoque físico mais próximo:</h5>
+              <p class="font-book mb-4">{{user.whereIsStock}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Interesse de atender quais estados:</h5>
+              <p class="font-book mb-4">{{user.interestedStates}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Interesse em atender clientes diretos (com entregas fracionadas):</h5>
+              <p class="font-book mb-4">{{user.delivery.fractional}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Interesse em atender revendas:</h5>
+              <p class="font-book mb-4">{{user.delivery.dealer}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Interesse em atender grupos de compras:</h5>
+              <p class="font-book mb-4">{{user.delivery.groups}}</p>
+            </div>
+
+            <div class="form-group">
+              <h5 class="row col text-bold" align="justify">Interesse em atender repiques com entregas no máximo até 30 dias:</h5>
+              <p class="font-book mb-4">{{user.delivery.repechage}}</p>
+            </div>
+          </div>
+
+          {{else compare user.type 'Produtor'}}
+          {{#compare client.0.uid user.uid}}
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Telefone fixo:</h5>
+            <p class="font-book mb-4">{{user.phone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Celular:</h5>
+            <p class="font-book mb-4">{{user.cellphone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Nome da fazenda:</h5>
+            <p class="font-book mb-4">{{user.farm.name}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Distância aproximadada cidade até a fazenda:</h5>
+            <p class="font-book mb-4">{{user.farm.distanceToCity}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Roteiro de entrega:</h5>
+            <p class="font-book mb-4">{{user.farm.deliveryScript}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Área plantada(ha):</h5>
+            <p class="font-book mb-4">{{user.farm.area}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Soja:</h5>
+            <p class="font-book mb-4">{{user.farm.soy}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Milho:</h5>
+            <p class="font-book mb-4">{{user.farm.corn}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Algodão:</h5>
+            <p class="font-book mb-4">{{user.farm.cotton}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Outras culturas:</h5>
+            <p class="font-book mb-4">{{user.farm.otherCultivations}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Pode se comunicar por Whatsapp:</h5>
+            <p class="font-book mb-4">{{user.wpp}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Inscrição Estadual:</h5>
+            <p class="font-book mb-4">{{user.stateRegistration}}</p>
+          </div>
+
+          {{else compare userType 'Administrador'}}
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Telefone fixo:</h5>
+            <p class="font-book mb-4">{{user.phone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Celular:</h5>
+            <p class="font-book mb-4">{{user.cellphone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Nome da fazenda:</h5>
+            <p class="font-book mb-4">{{user.farm.name}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Distância aproximadada cidade até a fazenda:</h5>
+            <p class="font-book mb-4">{{user.farm.distanceToCity}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Roteiro de entrega:</h5>
+            <p class="font-book mb-4">{{user.farm.deliveryScript}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Área plantada(ha):</h5>
+            <p class="font-book mb-4">{{user.farm.area}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Soja:</h5>
+            <p class="font-book mb-4">{{user.farm.soy}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Milho:</h5>
+            <p class="font-book mb-4">{{user.farm.corn}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Algodão:</h5>
+            <p class="font-book mb-4">{{user.farm.cotton}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Outras culturas:</h5>
+            <p class="font-book mb-4">{{user.farm.otherCultivations}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Pode se comunicar por Whatsapp:</h5>
+            <p class="font-book mb-4">{{user.wpp}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Inscrição Estadual:</h5>
+            <p class="font-book mb-4">{{user.stateRegistration}}</p>
+          </div>
+
+          {{else}}
+          <h5> Observação: </h5>
+          <p> Esse usuário não é seu cliente. Portanto, você não possui permissão para ver as informações específicas dele.</p>
+          {{/compare}}
+
+          {{else compare user.type 'Indústria'}}
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Telefone fixo:</h5>
+            <p class="font-book mb-4">{{user.phone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Celular:</h5>
+            <p class="font-book mb-4">{{user.cellphone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Nome de fantasia:</h5>
+            <p class="font-book mb-4">{{user.fantasyName}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Email de contato:</h5>
+            <p class="font-book mb-4">{{user.secondaryEmail}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Responsável pela conta:</h5>
+            <p class="font-book mb-4">{{user.responsible.name}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Tem condições de atender demandas imediatas:</h5>
+            <p class="font-book mb-4">{{user.delivery.stock}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Aceita entregar encomendas em até: (km)</h5>
+            <p class="font-book mb-4">{{user.delivery.maxDistance}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Telefone do responsável pela logística:</h5>
+            <p class="font-book mb-4">{{user.logistics.phone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Email da logística:</h5>
+            <p class="font-book mb-4">{{user.logistics.email}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Município sede da matriz:</h5>
+            <p class="font-book mb-4">{{user.headquarter}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Responsável pela empresa na região:</h5>
+            <p class="font-book mb-4">{{user.regionalResponsible}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Telefone fixo do Responsável pela conta MEGAPOOL:</h5>
+            <p class="font-book mb-4">{{user.responsible.phone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Celular do Responsável pela conta MEGAPOOL:</h5>
+            <p class="font-book mb-4">{{user.responsible.cellphone}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Estoque físico mais próximo:</h5>
+            <p class="font-book mb-4">{{user.whereIsStock}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Interesse de atender quais estados:</h5>
+            <p class="font-book mb-4">{{user.interestedStates}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Interesse em atender clientes diretos (com entregas fracionadas):</h5>
+            <p class="font-book mb-4">{{user.delivery.fractional}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Interesse em atender revendas:</h5>
+            <p class="font-book mb-4">{{user.delivery.dealer}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Interesse em atender grupos de compras:</h5>
+            <p class="font-book mb-4">{{user.delivery.groups}}</p>
+          </div>
+
+          <div class="form-group">
+            <h5 class="row col text-bold" align="justify">Interesse em atender repiques com entregas no máximo até 30 dias:</h5>
+            <p class="font-book mb-4">{{user.delivery.repechage}}</p>
+          </div>
+          {{/compare}}
+        </div>
+      </div>
+    </div>
+    <!-- <input name="franchiseeID" class="form-control font-light" value={{client.0.fullName}}></input> -->
+  </div>
+</div>
+
+
+
+{{#compare userType 'Produtor'}}
+{{#compare client.0.uid user.uid}}
+<form action="/user/cancel" method="post">
+  <input name="franchiseeID" type="hidden" class="form-control font-light" value="{{user.id}}"></input>
+  <button class="w-100 col-10 col-md-4 text-white btn btn-default bg-danger mx-auto d-block my-2" type="submit" name="button">Dispensar</button>
+</form>
+
+{{else}}
+{{#compare user.moreClients 'Não'}}
+<div class="container mb-5">
+  <h4 class="text-center font-light">Este franqueado não está disponível.</h4>
+</div>
+{{/compare}}
+
+{{#compare user.moreClients 'Sim'}}
+
+{{#if client.0.uid}}
+<form action="/user/change" method="POST">
+  <input name="franchiseeId" type="hidden" class="form-control font-light" value="{{user.id}}"></input>
+  <button class="w-100 col-10 col-md-4 text-white btn btn-default bg-info mx-auto d-block my-2" type="submit" name="button">Substituir</button>
+</form>
+
+{{else}}
+<form action="/user/generateContractRequest" method="POST">
+  <input name="franchiseeId" type="hidden" class="form-control font-light" value="{{user.id}}"></input>
+  <button class="w-100 col-10 col-md-4 text-white btn btn-default bg-green mx-auto d-block my-2" type="submit" name="button">Contratar</button>
+</form>
+{{/if}}
+
+{{/compare}}
+{{/compare}}
+
+{{else compare userType 'Franqueado'}}
+{{#compare client.0.uid user.uid}}
+<form action="/user/cancel" method="post">
+  <input name="franchiseeID" type="hidden" class="form-control font-light" value="{{user.id}}"></input>
+  <button class="w-100 col-10 col-md-4 text-white btn btn-default bg-danger mx-auto d-block my-2" type="submit" name="button">Cancelar Contrato</button>
+</form>
+{{/compare}}
+
+{{else compare userType 'Administrador'}}
+{{#compare user.status 'Aguardando aprovação'}}
+<div class="row justify-content-center">
+  <div class="pl-5 pr-5">
+    <form  method= "POST" action="/admin/{{id}}/updateUserActive">
+      <button type="submit" align="center" class="btn bg-green text-light2 mx-auto mt-2 px-5 mb-3 d-block" name="status" value="Ativo">
+        Ativar
+      </button>
+    </form>
+  </div>
+  <div class="pl-5 pr-5">
+    <form  method= "POST" action="/admin/{{id}}/updateUserActive">
+      <button type="submit" align="center" class="btn bg-danger text-light2 mx-auto mt-2 px-5 mb-3 d-block" name="status" value="Bloqueado">
+        Bloquear
+      </button>
+    </form>
+  </div>
+</div>
+{{else}}
+<div class="dropdown pr-4 pb-4 mx-auto">
+  <div class="pl-lg-3 pr-lg-3 ml-lg-3 mr-lg-3 mx-auto">
+    <div class="pl-lg-5 pr-lg-5 pb-lg-5 ml-lg-5 mr-lg-5 mx-auto">
+
+      <button name="taxStatus"  type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"
+      {{#compare user.status 'Ativo'}}
+      class="btn btn-outline-success dropdown-toggle col-lg-2 col-md-4 col-sm-6 mx-auto">
+      Ativo
+
+      {{else compare user.status 'Inativo'}}
+      class="btn btn-outline-warning dropdown-toggle col-lg-2 col-md-4 col-sm-6 mx-auto">
+      Inativo
+
+      {{else compare user.status 'Bloqueado'}}
+      class="btn btn-outline-danger dropdown-toggle col-lg-2 col-md-4 col-sm-6 mx-auto">
+      Bloqueado
+
+      {{/compare}}
+
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" >
+      <form  method= "POST" action="/admin/{{id}}/updateUserActive">
+        <a class="dropdown-item" href="#">
+          <button type="submit" align="center" class="btn btn-outline-success col-12" name="status" value="Ativo">
+            Ativar
+          </button>
+        </a>
+      </form>
+      <form method= "POST" action="/admin/{{id}}/updateUserActive">
+        <a class="dropdown-item " href="#">
+          <button type="submit" class="btn btn-outline-warning col-12" name="status" value="Inativo">
+            Inativar
+          </button>
+        </a>
+      </form>
+      <form  method= "POST" action="/admin/{{id}}/updateUserActive">
+        <a class="dropdown-item" href="#">
+          <button type="submit" align="center" class="btn btn-outline-danger col-12" name="status" value="Bloqueado">
+            Bloquear
+          </button>
+        </a>
+      </form>
+    </div>
+
+
+    {{/compare}}
+    {{/compare}}
+
+    {{#section 'scripts'}}
+    {{/section}}
